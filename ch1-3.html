@@ -1,0 +1,800 @@
+Chapter 1
+Welcome to Java
+
+Which of the following are true statements? (Choose all that apply.)
+
+Java allows operator overloading.
+Java code compiled on Windows can run on Linux.
+Java has pointers to specific locations in memory.
+Java is a procedural language.
+Java is an object-oriented language.
+Java is a functional programming language.
+Which of the following are true? (Choose all that apply.)
+
+javac compiles a .class file into a .java file.
+javac compiles a .java file into a .bytecode file.
+javac compiles a .java file into a .class file.
+java accepts the name of the class as a parameter.
+java accepts the filename of the .bytecode file as a parameter.
+java accepts the filename of the .class file as a parameter.
+Which of the following are true if this command completes successfully assuming the CLASSPATH is not set? (Choose all that apply.)
+
+java MyProgram.java
+A .class file is created.
+MyProgram can reference classes in the package com.sybex.book.
+MyProgram can reference classes in the package java.lang.
+MyProgram can reference classes in the package java.util.
+None of the above. The program needs to be run as java MyProgram.
+Given the following classes, which of the following can independently replace INSERT IMPORTS HERE to make the code compile? (Choose all that apply.)
+
+package aquarium;
+public class Tank { }
+package aquarium.jellies;
+public class Jelly { }
+package visitor;
+INSERT IMPORTS HERE
+public class AquariumVisitor {
+  public void admire(Jelly jelly) { } }
+import aquarium.*;
+import aquarium.*.Jelly;
+import aquarium.jellies.Jelly;
+import aquarium.jellies.*;
+import aquarium.jellies.Jelly.*;
+None of these can make the code compile.
+Which are included in the JDK? (Choose all that apply.)
+
+javac
+Eclipse
+JVM
+javadoc
+jar
+None of the above
+Given the following classes, what is the maximum number of imports that can be removed and have the code still compile?
+
+package aquarium;
+public class Water { }
+package aquarium;
+import java.lang.*;
+import java.lang.System;
+import aquarium.Water;
+import aquarium.*;
+public class Tank {
+  public void print(Water water) {
+     System.out.println(water); } }
+0
+1
+2
+3
+4
+Does not compile
+Given the following classes, which of the following snippets can independently be inserted in place of INSERT IMPORTS HERE and have the code compile? (Choose all that apply.)
+
+package aquarium;
+public class Water {
+   boolean salty = false;
+}
+ 
+package aquarium.jellies;
+public class Water {
+   boolean salty = true;
+}
+ 
+package employee;
+INSERT IMPORTS HERE
+public class WaterFiller {
+   Water water;
+}
+import aquarium.*;
+import aquarium.Water;
+import aquarium.jellies.*;
+import aquarium.*;
+import aquarium.jellies.Water;
+import aquarium.*;
+import aquarium.jellies.*;
+import aquarium.Water;
+import aquarium.jellies.Water;
+None of these imports can make the code compile.
+Given the following command, which of the following classes would be included for compilation? (Choose all that apply.)
+
+javac *.java
+Hyena.java
+Warthog.java
+land/Hyena.java
+land/Warthog.java
+Hyena.groovy
+Warthog.groovy
+Given the following class, which of the following calls print out Blue Jay? (Choose all that apply.)
+
+public class BirdDisplay {
+   public static void main(String[] name) {
+      System.out.println(name[1]);
+} }
+java BirdDisplay Sparrow Blue Jay
+java BirdDisplay Sparrow "Blue Jay"
+java BirdDisplay Blue Jay Sparrow
+java BirdDisplay "Blue Jay" Sparrow
+java BirdDisplay.class Sparrow "Blue Jay"
+java BirdDisplay.class "Blue Jay" Sparrow
+Which of the following are legal entry point methods that can be run from the command line? (Choose all that apply.)
+
+private static void main(String[] args)
+public static final main(String[] args)
+public void main(String[] args)
+public static void test(String[] args)
+public static void main(String[] args)
+public static main(String[] args)
+Which of the following are true statements about Java? (Choose all that apply.)
+
+Bug-free code is guaranteed.
+Deprecated features are never removed.
+Multithreaded code is allowed.
+Security is a design goal.
+Sideways compatibility is a design goal.
+Which options are valid on the javac command without considering module options? (Choose all that apply.)
+
+-c
+-C
+-cp
+-CP
+-d
+-f
+-p
+Which options are valid on the java command without considering module options? (Choose all that apply.)
+
+-c
+-C
+-cp
+-d
+-f
+-p
+Which options are valid on the jar command without considering module options? (Choose all that apply.)
+
+-c
+-C
+-cp
+-d
+-f
+-p
+What does the following code output when run as java Duck Duck Goose?
+
+public class Duck {
+   public void main(String[] args) { 
+      for (int i = 1; i <= args.length; i++)
+         System.out.println(args[i]);
+} }
+Duck Goose
+Duck ArrayIndexOutOfBoundsException
+Goose
+Goose ArrayIndexOutOfBoundsException
+None of the above
+Suppose we have the following class in the file /my/directory/named/A/Bird.java. Which of the answer options replaces INSERT CODE HERE when added independently if we compile from /my/directory? (Choose all that apply.)
+
+INSERT CODE HERE
+public class Bird { }
+package my.directory.named.a;
+package my.directory.named.A;
+package named.a;
+package named.A;
+package a;
+package A;
+Which of the following are true? (Choose all that apply.)
+
+public class Bunny {
+   public static void main(String[] x) {
+      Bunny bun = new Bunny();
+} }
+Bunny is a class.
+bun is a class.
+main is a class.
+Bunny is a reference to an object.
+bun is a reference to an object.
+main is a reference to an object.
+The main() method doesn’t run because the parameter name is incorrect.
+Which answer options represent the order in which the following statements can be assembled into a program that will compile successfully? (Choose all that apply.)
+
+X: class Rabbit {}
+Y: import java.util.*;
+Z: package animals;
+X, Y, Z
+Y, Z, X
+Z, Y, X
+Y, X
+Z, X
+X, Z
+Which are not available for download from Oracle for Java 11? (Choose all that apply.)
+
+JDK
+JRE
+Eclipse
+All of these are available from Oracle.
+Which are valid ways to specify the classpath when compiling? (Choose all that apply.)
+
+-cp
+-classpath
+--classpath
+-class-path
+--class-path
+
+Chapter 2
+Java Building Blocks
+
+Which of the following are valid Java identifiers? (Choose all that apply.)
+
+_
+_helloWorld$
+true
+java.lang
+Public
+1980_s
+_Q2_
+What lines are printed by the following program? (Choose all that apply.)
+
+  1: public class WaterBottle {
+  2:    private String brand;
+  3:    private boolean empty;
+  4:    public static float code;
+  5:    public static void main(String[] args) {
+  6:      WaterBottle wb = new WaterBottle();
+  7:      System.out.println("Empty = " + wb.empty);
+  8:      System.out.println("Brand = " + wb.brand);
+  9:      System.out.println("Code = " + code);
+  10:   } }
+Line 8 generates a compiler error.
+Line 9 generates a compiler error.
+Empty =
+Empty = false
+Brand =
+Brand = null
+Code = 0.0
+Code = 0f
+Which of the following code snippets about var compile without issue when used in a method? (Choose all that apply.)
+
+var spring = null;
+var fall = "leaves";
+var evening = 2; evening = null;
+var night = new Object();
+var day = 1/0;
+var winter = 12, cold;
+var fall = 2, autumn = 2;
+var morning = ""; morning = null;
+Which of the following statements about the code snippet are true? (Choose all that apply.)
+
+4: short numPets = 5L;
+int numGrains = 2.0;
+6: String name = "Scruffy";
+7: int d = numPets.length();
+8: int e = numGrains.length;
+9: int f = name.length();
+Line 4 generates a compiler error.
+Line 5 generates a compiler error.
+Line 6 generates a compiler error.
+Line 7 generates a compiler error.
+Line 8 generates a compiler error.
+Line 9 generates a compiler error.
+Which statements about the following class are true? (Choose all that apply.)
+
+  1: public class River {
+  2:    int Depth = 1;
+  3:    float temp = 50.0;
+  4:    public void flow() {
+  5:       for (int i = 0; i < 1; i++) {
+  6:          int depth = 2;
+  7:          depth++;
+  8:          temp--;
+  9:       }
+   10:      System.out.println(depth);
+  11:      System.out.println(temp); }
+  12:   public static void main(String... s) {
+  13:      new River().flow();
+  14: } }
+Line 3 generates a compiler error.
+Line 6 generates a compiler error.
+Line 7 generates a compiler error.
+Line 10 generates a compiler error.
+The program prints 3 on line 10.
+The program prints 4 on line 10.
+The program prints 50.0 on line 11.
+The program prints 49.0 on line 11.
+Which of the following are correct? (Choose all that apply.)
+
+An instance variable of type float defaults to 0.
+An instance variable of type char defaults to null.
+An instance variable of type double defaults to 0.0.
+An instance variable of type int defaults to null.
+An instance variable of type String defaults to null.
+An instance variable of type String defaults to the empty string "".
+None of the above
+Which of the following are correct? (Choose all that apply.)
+
+A local variable of type boolean defaults to null.
+A local variable of type float defaults to 0.0f.
+A local variable of type double defaults to 0.
+A local variable of type Object defaults to null.
+A local variable of type boolean defaults to false.
+A local variable of type float defaults to 0.0.
+None of the above
+Which of the following are true? (Choose all that apply.)
+
+A class variable of type boolean defaults to 0.
+A class variable of type boolean defaults to false.
+A class variable of type boolean defaults to null.
+A class variable of type long defaults to null.
+A class variable of type long defaults to 0L.
+A class variable of type long defaults to 0.
+None of the above
+Which of the following statements about garbage collection are correct? (Choose all that apply.)
+
+Calling System.gc() is guaranteed to free up memory by destroying objects eligible for garbage collection.
+Garbage collection runs on a set schedule.
+Garbage collection allows the JVM to reclaim memory for other objects.
+Garbage collection runs when your program has used up half the available memory.
+An object may be eligible for garbage collection but never removed from the heap.
+An object is eligible for garbage collection once no references to it are accessible in the program.
+Marking a variable final means its associated object will never be garbage collected.
+Which statements about the following class are correct? (Choose all that apply.)
+
+  1: public class PoliceBox {
+  2:    String color;
+  3:    long age;
+  4:    public void PoliceBox() {
+  5:       color = "blue";
+  6:       age = 1200;
+  7:    }
+  8:    public static void main(String []time) {
+  9:       var p = new PoliceBox();
+  10:      var q = new PoliceBox();
+  11:      p.color = "green";
+  12:      p.age = 1400;
+  13:      p = q;
+  14:      System.out.println("Q1="+q.color);
+  15:      System.out.println("Q2="+q.age);
+  16:      System.out.println("P1="+p.color);
+  17:      System.out.println("P2="+p.age);
+  18: } }
+It prints Q1=blue.
+It prints Q2=1200.
+It prints P1=null.
+It prints P2=1400.
+Line 4 does not compile.
+Line 12 does not compile.
+Line 13 does not compile.
+None of the above
+Which of the following legally fill in the blank so you can run the main() method from the command line? (Choose all that apply.)
+
+public static void main(_______________) {}
+String... var
+String My.Names[]
+String[] 123
+String[] _names
+String... $n
+var names
+String myArgs
+Which of the following expressions, when inserted independently into the blank line, allow the code to compile? (Choose all that apply.)
+
+  public void printMagicData(__________) {
+     double magic = ;
+     System.out.println(magic);
+  }
+3_1
+1_329_.0
+3_13.0_
+5_291._2
+2_234.0_0
+9___6
+_1_3_5_0
+None of the above
+Suppose we have a class named Rabbit. Which of the following statements are true? (Choose all that apply.)
+
+  1: public class Rabbit {
+  2:    public static void main(String[] args) {
+  3:       Rabbit one = new Rabbit();
+  4:       Rabbit two = new Rabbit();
+  5:       Rabbit three = one;
+  6:       one = null;
+  7:       Rabbit four = one;
+  8:       three = null;
+  9:       two = null;
+  10:      two = new Rabbit();
+  11:      System.gc();
+  12: } }
+The Rabbit object created on line 3 is first eligible for garbage collection immediately following line 6.
+The Rabbit object created on line 3 is first eligible for garbage collection immediately following line 8.
+The Rabbit object created on line 3 is first eligible for garbage collection immediately following line 12.
+The Rabbit object created on line 4 is first eligible for garbage collection immediately following line 9.
+The Rabbit object created on line 4 is first eligible for garbage collection immediately following line 11.
+The Rabbit object created on line 4 is first eligible for garbage collection immediately following line 12.
+The Rabbit object created on line 10 is first eligible for garbage collection immediately following line 11.
+The Rabbit object created on line 10 is first eligible for garbage collection immediately following line 12.
+Which of the following statements about var are true? (Choose all that apply.)
+
+A var can be used as a constructor parameter.
+The type of var is known at compile time.
+A var cannot be used as an instance variable.
+A var can be used in a multiple variable assignment statement.
+The value of var cannot change at runtime.
+The type of var cannot change at runtime.
+The word var is a reserved word in Java.
+Given the following class, which of the following lines of code can independently replace INSERT CODE HERE to make the code compile? (Choose all that apply.)
+
+  public class Price {
+     public void admission() {
+        INSERT CODE HERE
+        System.out.print(amount);
+        } }
+int Amount = 0b11;
+int amount = 9L;
+int amount = 0xE;
+int amount = 1_2.0;
+double amount = 1_0_.0;
+int amount = 0b101;
+double amount = 9_2.1_2;
+double amount = 1_2_.0_0;
+Which statements about the following class are correct? (Choose all that apply.)
+
+  1: public class ClownFish {
+  2:    int gills = 0, double weight=2;
+  3:    { int fins = gills; }
+  4:    void print(int length = 3) {
+  5:       System.out.println(gills);
+  6:       System.out.println(weight);
+  7:       System.out.println(fins);
+  8:       System.out.println(length);
+  9: } }
+Line 2 contains a compiler error.
+Line 3 contains a compiler error.
+Line 4 contains a compiler error.
+Line 7 contains a compiler error.
+The code prints 0.
+The code prints 2.0.
+The code prints 2.
+The code prints 3.
+Which statements about classes and its members are correct? (Choose all that apply.)
+
+A variable declared in a loop cannot be referenced outside the loop.
+A variable cannot be declared in an instance initializer block.
+A constructor argument is in scope for the life of the instance of the class for which it is defined.
+An instance method can only access instance variables declared before the instance method declaration.
+A variable can be declared in an instance initializer block but cannot be referenced outside the block.
+A constructor can access all instance variables.
+An instance method can access all instance variables.
+Which statements about the following code snippet are correct? (Choose all that apply.)
+
+  3: var squirrel = new Object();
+  4: int capybara = 2, mouse, beaver = -1;
+  5: char chipmunk = -1;
+  6: squirrel = "";
+  7: beaver = capybara;
+  8: System.out.println(capybara);
+  9: System.out.println(mouse);
+  10: System.out.println(beaver);
+  11: System.out.println(chipmunk);
+The code prints 2.
+The code prints -1.
+The code prints the empty String.
+The code prints: null.
+Line 4 contains a compiler error.
+Line 5 contains a compiler error.
+Line 9 contains a compiler error.
+Line 10 contains a compiler error.
+Assuming the following class compiles, how many variables defined in the class or method are in scope on the line marked // SCOPE on line 14?
+
+  1: public class Camel {
+  2:    { int hairs = 3_000_0; }
+  3:    long water, air=2;
+  4:    boolean twoHumps = true;
+  5:    public void spit(float distance) {
+  6:       var path = "";
+  7:       { double teeth = 32 + distance++; }
+  8:       while(water > 0) {
+  9:          int age = twoHumps ? 1 : 2;
+  10:         short i=-1;
+  11:         for(i=0; i<10; i++) {
+  12:            var Private = 2;
+  13:         }
+  14:         // SCOPE
+  15:      }
+  16:   }
+  17: }
+2
+3
+4
+5
+6
+7
+None of the above
+What is the output of executing the following class?
+
+  1: public class Salmon {
+  2:    int count;
+  3:    { System.out.print(count+"-"); }
+  4:    { count++; }
+  5:    public Salmon() {
+  6:       count = 4;
+  7:       System.out.print(2+"-");
+  8:    }
+  9:    public static void main(String[] args) {
+  10:      System.out.print(7+"-");
+  11:      var s = new Salmon();
+  12:      System.out.print(s.count+"-"); } }
+7-0-2-1-
+7-0-1-
+0-7-2-1-
+7-0-2-4-
+0-7-1-
+The class does not compile because of line 3.
+The class does not compile because of line 4.
+None of the above.
+Which statements about the following program are correct? (Choose all that apply.)
+
+  1: public class Bear {
+  2:    private Bear pandaBear;
+  3:    protected void finalize() {}
+  4:    private void roar(Bear b) {
+  5:       System.out.println("Roar!");
+  6:       pandaBear = b;
+  7:    }
+  8:    public static void main(String[] args) {
+  9:       Bear brownBear = new Bear();
+  10:      Bear polarBear = new Bear();
+  11:      brownBear.roar(polarBear);
+  12:      polarBear = null;
+  13:      brownBear = null;
+  14:      System.gc(); } }
+The object created on line 9 is eligible for garbage collection after line 13.
+The object created on line 9 is eligible for garbage collection after line 14.
+The object created on line 10 is eligible for garbage collection after line 12.
+The object created on line 10 is eligible for garbage collection after line 13.
+Garbage collection is guaranteed to run.
+Garbage collection might or might not run.
+Garbage collection is guaranteed not to run.
+The code does not compile.
+Which of the following are valid instance variable declarations? (Choose all that apply.)
+
+var _ = 6000_.0;
+var null = 6_000;
+var $_ = 6_000;
+var $2 = 6_000f;
+var var = 3_0_00.0;
+var #CONS = 2_000.0;
+var %C = 6_000_L;
+None of the above
+
+Chapter 3
+Operators
+
+Which of the following Java operators can be used with boolean variables? (Choose all that apply.)
+
+==
++
+--
+!
+%
+<=
+Cast with (boolean)
+What data type (or types) will allow the following code snippet to compile? (Choose all that apply.)
+
+byte apples = 5;
+short oranges = 10;
+_______ bananas = apples + oranges;
+int
+long
+boolean
+double
+short
+byte
+What change, when applied independently, would allow the following code snippet to compile? (Choose all that apply.)
+
+  3: long ear = 10;
+  4: int hearing = 2 * ear;
+No change; it compiles as is.
+Cast ear on line 4 to int.
+Change the data type of ear on line 3 to short.
+Cast 2 * ear on line 4 to int.
+Change the data type of hearing on line 4 to short.
+Change the data type of hearing on line 4 to long.
+What is the output of the following code snippet?
+  3: boolean canine = true, wolf = true;
+  4: int teeth = 20;
+  5: canine = (teeth != 10) ^ (wolf=false);
+  6: System.out.println(canine+", "+teeth+", "+wolf);
+true, 20, true
+true, 20, false
+false, 10, true
+false, 20, false
+The code will not compile because of line 5.
+None of the above
+Which of the following operators are ranked in increasing or the same order of precedence? Assume the + operator is binary addition, not the unary form. (Choose all that apply.)
+
++, *, %, --
+++, (int), *
+=, ==, !
+(short), =, !, *
+*, /, %, +, ==
+!, ||, &
+^, +, =, +=
+What is the output of the following program?
+
+  1: public class CandyCounter {
+  2:    static long addCandy(double fruit, float vegetables) {
+  3:       return (int)fruit+vegetables;
+  4:    }
+  5: 
+  6:    public static void main(String[] args) {
+  7:       System.out.print(addCandy(1.4, 2.4f) + "-");
+  8:       System.out.print(addCandy(1.9, (float)4) + "-");
+  9:       System.out.print(addCandy((long)(int)(short)2, (float)4)); } }
+4-6-6.0
+3-5-6
+3-6-6
+4-5-6
+The code does not compile because of line 9.
+None of the above
+What is the output of the following code snippet?
+
+  int ph = 7, vis = 2;
+  boolean clear = vis > 1 & (vis < 9 || ph < 2);
+  boolean safe = (vis > 2) && (ph++ > 1);
+  boolean tasty = 7 <= --ph;
+  System.out.println(clear+"-"+safe+"-"+tasty);
+true-true-true
+true-true-false
+true-false-true
+true-false-false
+false-true-true
+false-true-false
+false-false-true
+false-false-false
+What is the output of the following code snippet?
+
+  4: int pig = (short)4;
+  5: pig = pig++;
+  6: long goat = (int)2;
+  7: goat -= 1.0;
+  8: System.out.print(pig + " - " + goat);
+4 - 1
+4 - 2
+5 - 1
+5 - 2
+The code does not compile due to line 7.
+None of the above
+What are the unique outputs of the following code snippet? (Choose all that apply.)
+
+  int a = 2, b = 4, c = 2;
+  System.out.println(a > 2 ? --c : b++);
+  System.out.println(b = (a!=c ? a : b++));
+  System.out.println(a > b ? b < c ? b : 2 : 1);
+1
+2
+3
+4
+5
+6
+The code does not compile.
+What are the unique outputs of the following code snippet? (Choose all that apply.)
+
+  short height = 1, weight = 3;
+  short zebra = (byte) weight * (byte) height;
+  double ox = 1 + height * 2 + weight;
+  long giraffe = 1 + 9 % height + 1;
+  System.out.println(zebra);
+  System.out.println(ox);
+  System.out.println(giraffe);
+1
+2
+3
+4
+5
+6
+The code does not compile.
+What is the output of the following code?
+
+  1: public class ArithmeticSample {
+  2:    public static void main(String[] args) {
+  3:       int sample1 = (2 * 4) % 3;
+  4:       int sample2 = 3 * 2 % 3;
+  5:       int sample3 = 5 * (1 % 2);
+  6:       System.out.println(sample1+"-"+sample2+"-"+sample3);
+  7: }}
+0-0-5
+1-2-10
+2-1-5
+2-0-5
+3-1-10
+3-2-6
+The code does not compile.
+The ________ operator increases a value and returns the original value, while the ________ operator decreases a value and returns the new value.
+
+post-increment, post-increment
+pre-decrement, post-decrement
+post-increment, post-decrement
+post-increment, pre-decrement
+pre-increment, pre-decrement
+pre-increment, post-decrement
+What is the output of the following code snippet?
+
+  boolean sunny = true, raining = false, sunday = true;
+  boolean goingToTheStore = sunny & raining ^ sunday;
+  boolean goingToTheZoo = sunday && !raining;
+  boolean stayingHome = !(goingToTheStore && goingToTheZoo);
+  System.out.println(goingToTheStore + "-" + goingToTheZoo
+     + "-" +stayingHome);
+true-false-false
+false-true-false
+true-true-true
+false-true-true
+false-false-false
+true-true-false
+None of the above
+Which of the following statements are correct? (Choose all that apply.)
+
+The return value of an assignment operation expression can be void.
+The inequality operator (!=) can be used to compare objects.
+The equality operator (==) can be used to compare a boolean value with a numeric value.
+During runtime, the && and | operators may cause only the left side of the expression to be evaluated.
+The return value of an assignment operation expression is the value of the newly assigned variable.
+In Java, 0 and false may be used interchangeably.
+The logical complement operator (!) cannot be used to flip numeric values.
+Which operators take three operands or values? (Choose all that apply.)
+
+=
+&&
+*=
+? :
+&
+++
+/
+How many lines of the following code contain compiler errors?
+
+  int note = 1 * 2 + (long)3;
+  short melody = (byte)(double)(note *= 2);
+  double song = melody;
+  float symphony = (float)((song == 1_000f) ? song * 2L : song);
+0
+1
+2
+3
+4
+Given the following code snippet, what is the value of the variables after it is executed? (Choose all that apply.)
+
+  int ticketsTaken = 1;
+  int ticketsSold = 3;
+  ticketsSold += 1 + ticketsTaken++;
+  ticketsTaken *= 2;
+  ticketsSold += (long)1;
+ticketsSold is 8
+ticketsTaken is 2
+ticketsSold is 6
+ticketsTaken is 6
+ticketsSold is 7
+ticketsTaken is 4
+The code does not compile.
+Which of the following can be used to change the order of operation in an expression? (Choose all that apply.)
+
+[ ]
+< >
+( )
+\ /
+{ }
+" "
+What is the result of executing the following code snippet? (Choose all that apply.)
+
+  3: int start = 7;
+  4: int end = 4;
+  5: end += ++start;
+  6: start = (byte)(Byte.MAX_VALUE + 1);
+start is 0
+start is -128
+start is 127
+end is 8
+end is 11
+end is 12
+The code does not compile.
+The code compiles but throws an exception at runtime.
+Which of the following statements about unary operators are true? (Choose all that apply.)
+
+Unary operators are always executed before any surrounding binary or ternary operators.
+The - operator can be used to flip a boolean value.
+The pre-increment operator (++) returns the value of the variable before the increment is applied.
+The post-decrement operator (--) returns the value of the variable before the decrement is applied.
+The ! operator cannot be used on numeric values.
+None of the above
